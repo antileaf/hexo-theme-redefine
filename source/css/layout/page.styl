@@ -1,4 +1,11 @@
-@import '../common/variables'
+@require '../common/variables'
+
+.page-title-header
+  font-size 3.2rem
+  line-height 1
+  font-weight bold
+  color var(--second-text-color)
+  margin 6px 0 36px 0
 
 .page-container
   position relative
@@ -13,9 +20,11 @@
   .main-content-container
     padding-top $navbar-height
     position relative
+    transition padding 0.2s ease
 
     .navbar-shrink &
       padding-top $navbar-shrink-height
+      transition padding 0.2s ease
 
       +redefine-tablet()
         padding-top: ($navbar-shrink-height * 0.9)
@@ -102,7 +111,7 @@
       top: $navbar-shrink-height + $spacing-unit
 
       +redefine-tablet()
-        top: ($navbar-shrink-height * 0.9) + $spacing-unit
+        top ($navbar-shrink-height * 0.9) + $spacing-unit
 
       +redefine-mobile()
         top: ($navbar-shrink-height * 0.8 + $spacing-unit)
